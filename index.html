@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#10130f" />
+  <title>CUSTOM.LAB — кастомные вещи</title>
+  <meta name="description" content="Одностраничный сайт для кастом-мастера: работы, цены, FAQ и многошаговый бланк заказа." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="На главную">CUSTOM<span>.LAB</span></a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="#works">Работы</a>
+      <a href="#custom">Кастом</a>
+      <a href="#prices">Цены</a>
+      <a href="#order">Заказ</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="header-cta" href="#order">Оставить заявку</a>
+    <button class="menu-btn" type="button" aria-label="Открыть меню" aria-expanded="false">☰</button>
+  </header>
+
+  <main id="top">
+    <section class="hero section-pad">
+      <div class="hero-copy">
+        <p class="eyebrow">ручной кастом · одежда · обувь · аксессуары</p>
+        <h1>ТВОЯ ВЕЩЬ.<br><span>ТВОИ ПРАВИЛА.</span></h1>
+        <p class="hero-text">Делаем вещи, которые не выглядят как «ещё одна вещь из магазина». Ручная работа, единичные экземпляры и идея, собранная вокруг тебя.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#order">Хочу кастом ↗</a>
+          <a class="btn btn-ghost" href="#works">Смотреть работы</a>
+        </div>
+        <div class="hero-meta">
+          <span>от 900 ₽</span><i></i><span>ответ в Telegram</span><i></i><span>доставка по РФ</span>
+        </div>
+      </div>
+
+      <div class="draw-card" id="drawCard">
+        <div class="draw-card-top">
+          <span>интерактивная зона</span>
+          <button type="button" id="clearCanvas">стереть</button>
+        </div>
+        <canvas id="paintCanvas" aria-label="Поле, на котором можно рисовать мышкой"></canvas>
+        <div class="draw-hint">Проведи мышкой —<br>оставь свой след ↘</div>
+        <div class="draw-sticker">ONE<br>OF<br>ONE</div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>HANDMADE ✦ CUSTOM CLOTHES ✦ ONE OF ONE ✦ YOUR IDEA ✦ NO MASS MARKET ✦ HANDMADE ✦ CUSTOM CLOTHES ✦ ONE OF ONE ✦ YOUR IDEA ✦ NO MASS MARKET ✦</span>
+        <span>HANDMADE ✦ CUSTOM CLOTHES ✦ ONE OF ONE ✦ YOUR IDEA ✦ NO MASS MARKET ✦ HANDMADE ✦ CUSTOM CLOTHES ✦ ONE OF ONE ✦ YOUR IDEA ✦ NO MASS MARKET ✦</span>
+      </div>
+    </div>
+
+    <section class="works section-pad" id="works">
+      <div class="section-head">
+        <div><span class="section-num">01</span><h2>Работы</h2></div>
+        <p>Не фотобанк — пока стоят декоративные заглушки. Меняешь их на свои фото, и каталог уже готов.</p>
+      </div>
+
+      <div class="filter-row" role="tablist" aria-label="Фильтр работ">
+        <button class="filter active" data-filter="all" type="button">все</button>
+        <button class="filter" data-filter="clothes" type="button">одежда</button>
+        <button class="filter" data-filter="shoes" type="button">обувь</button>
+        <button class="filter" data-filter="accessories" type="button">аксессуары</button>
+      </div>
+
+      <div class="work-grid">
+        <article class="work-card work-a" data-category="clothes">
+          <div class="work-art"><span>01</span><b>VOID<br>HOODIE</b></div>
+          <div class="work-info"><strong>Худи «VOID»</strong><span>ручная графика · 2 900 ₽</span></div>
+        </article>
+        <article class="work-card work-b" data-category="clothes">
+          <div class="work-art"><span>02</span><b>RAW<br>DENIM</b></div>
+          <div class="work-info"><strong>Джинсовка «RAW»</strong><span>спина + рукава · 3 600 ₽</span></div>
+        </article>
+        <article class="work-card work-c" data-category="shoes">
+          <div class="work-art"><span>03</span><b>ACID<br>STEP</b></div>
+          <div class="work-info"><strong>Кеды «ACID STEP»</strong><span>пара · 2 400 ₽</span></div>
+        </article>
+        <article class="work-card work-d" data-category="accessories">
+          <div class="work-art"><span>04</span><b>CTRL<br>BAG</b></div>
+          <div class="work-info"><strong>Шоппер «CTRL»</strong><span>одна сторона · 1 500 ₽</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="custom section-pad" id="custom">
+      <div class="section-head light-head">
+        <div><span class="section-num">02</span><h2>Кастом</h2></div>
+        <p>Можно прийти со своей вещью или попросить подобрать основу. Идея может быть конкретной или в духе «хочу что-то странное и зелёное».</p>
+      </div>
+
+      <div class="custom-grid">
+        <div class="big-copy">ПЕРСОНАЖИ / ТЕКСТ / ГРАФИКА / ПАТТЕРНЫ / МЕМЫ / АРТ / ЧТО УГОДНО</div>
+        <div class="custom-options">
+          <article><span>A</span><h3>На твоей вещи</h3><p>Передаёшь свою футболку, худи, джинсовку, кеды или аксессуар. Проверяем материал и согласовываем работу.</p></article>
+          <article><span>B</span><h3>На новой основе</h3><p>Подбираем подходящую вещь, размер и цвет. Стоимость основы считается отдельно.</p></article>
+        </div>
+      </div>
+
+      <div class="process">
+        <div class="process-step"><span>01</span><h3>Заявка</h3><p>Вещь, идея, референсы и бюджет.</p></div>
+        <div class="process-step"><span>02</span><h3>Обсуждение</h3><p>Размер, расположение, техника и сроки.</p></div>
+        <div class="process-step"><span>03</span><h3>Эскиз</h3><p>Если нужен — согласуем композицию.</p></div>
+        <div class="process-step"><span>04</span><h3>Работа</h3><p>Ручная роспись и фиксация краски.</p></div>
+        <div class="process-step"><span>05</span><h3>Готово</h3><p>Встреча или отправка доставкой.</p></div>
+      </div>
+    </section>
+
+    <section class="prices section-pad" id="prices">
+      <div class="section-head">
+        <div><span class="section-num">03</span><h2>Цены</h2></div>
+        <p>Финальная стоимость зависит от площади, сложности и самой вещи. Ниже — понятный ориентир.</p>
+      </div>
+
+      <div class="price-highlight">
+        <span>кастом от</span>
+        <strong>900 ₽</strong>
+        <p>Точную цену фиксируем до начала работы.</p>
+      </div>
+
+      <div class="price-grid">
+        <article><span>маленький элемент</span><strong>900–1 500 ₽</strong><p>логотип, надпись, небольшой рисунок</p></article>
+        <article><span>средний рисунок</span><strong>1 500–3 000 ₽</strong><p>грудь, рукав, часть спины</p></article>
+        <article><span>большая работа</span><strong>3 000 ₽+</strong><p>вся спина, сложная композиция, несколько зон</p></article>
+      </div>
+    </section>
+
+    <section class="order section-pad" id="order">
+      <div class="section-head order-head">
+        <div><span class="section-num">04</span><h2>Бланк заказа</h2></div>
+        <p>Чем подробнее заявка, тем быстрее можно назвать точную цену. Форма работает прямо в браузере и собирает готовый текст для Telegram.</p>
+      </div>
+
+      <div class="order-shell">
+        <div class="order-topline">
+          <strong>ЗАЯВКА № <span id="orderNumber">0000</span></strong>
+          <span>CUSTOM.LAB / CLIENT FORM</span>
+        </div>
+
+        <div class="steps" aria-label="Этапы формы">
+          <button class="step active" type="button" data-step="0"><b>1</b><span>вещь</span></button>
+          <button class="step" type="button" data-step="1"><b>2</b><span>идея</span></button>
+          <button class="step" type="button" data-step="2"><b>3</b><span>детали</span></button>
+          <button class="step" type="button" data-step="3"><b>4</b><span>контакты</span></button>
+        </div>
+
+        <form id="orderForm">
+          <section class="form-page active" data-page="0">
+            <h3>Что кастомим?</h3>
+            <div class="chip-grid" data-name="item">
+              <button type="button" class="choice">футболка</button><button type="button" class="choice">худи</button><button type="button" class="choice">рубашка</button><button type="button" class="choice">джинсы</button><button type="button" class="choice">куртка</button><button type="button" class="choice">кеды</button><button type="button" class="choice">сумка</button><button type="button" class="choice">другое</button>
+            </div>
+            <label class="field"><span>Если «другое» — что именно?</span><input name="itemOther" placeholder="например, кепка или чехол"></label>
+            <h3>Чья вещь?</h3>
+            <div class="chip-grid two" data-name="source">
+              <button type="button" class="choice">своя вещь</button><button type="button" class="choice">нужна новая</button>
+            </div>
+            <label class="field"><span>Размер, если знаешь</span><input name="size" placeholder="M / 46 / 42 EU"></label>
+          </section>
+
+          <section class="form-page" data-page="1">
+            <label class="field"><span>Опиши идею</span><textarea name="idea" rows="7" placeholder="Что хочешь увидеть на вещи? Можно максимально по-человечески."></textarea></label>
+            <div class="upload-box" id="uploadBox">
+              <input id="refs" name="refs" type="file" accept="image/*" multiple hidden>
+              <button type="button" id="uploadBtn">+ прикрепить референсы</button>
+              <p>до 6 изображений · JPG / PNG / WEBP</p>
+              <div id="previewList" class="preview-list"></div>
+            </div>
+            <label class="field"><span>Ссылки на Pinterest / VK / другое</span><input name="links" placeholder="https://..."></label>
+          </section>
+
+          <section class="form-page" data-page="2">
+            <h3>Где размещаем?</h3>
+            <div class="chip-grid" data-name="placement" data-multi="true">
+              <button type="button" class="choice">перед</button><button type="button" class="choice">спина</button><button type="button" class="choice">рукав</button><button type="button" class="choice">воротник</button><button type="button" class="choice">вся вещь</button><button type="button" class="choice">посоветуй</button>
+            </div>
+            <h3>Цвет</h3>
+            <div class="chip-grid three" data-name="color"><button type="button" class="choice">ч/б</button><button type="button" class="choice">цветное</button><button type="button" class="choice">не важно</button></div>
+            <h3>Бюджет</h3>
+            <div class="chip-grid" data-name="budget"><button type="button" class="choice">до 1 500 ₽</button><button type="button" class="choice">1 500–3 000 ₽</button><button type="button" class="choice">3 000–5 000 ₽</button><button type="button" class="choice">5 000 ₽+</button><button type="button" class="choice">не знаю</button></div>
+            <div class="fields-row"><label class="field"><span>Когда нужно?</span><input name="deadline" type="date"></label><label class="field"><span>Получение</span><select name="delivery"><option>встреча</option><option>доставка СДЭК</option><option>Почта России</option><option>обсудим</option></select></label></div>
+          </section>
+
+          <section class="form-page" data-page="3">
+            <div class="fields-row"><label class="field"><span>Имя *</span><input name="name" required placeholder="Как к тебе обращаться"></label><label class="field"><span>Telegram / телефон *</span><input name="contact" required placeholder="@username или +7..."></label></div>
+            <label class="field"><span>Комментарий</span><textarea name="comment" rows="5" placeholder="Любые детали, которые важно знать"></textarea></label>
+            <label class="consent"><input type="checkbox" name="consent" required><span>Согласен(на) на обработку контактных данных для связи по заказу.</span></label>
+            <div class="summary" id="summaryBox"><span>Перед отправкой здесь появится краткое резюме заявки.</span></div>
+          </section>
+
+          <div class="form-actions">
+            <button class="btn btn-ghost dark" id="prevBtn" type="button">← назад</button>
+            <button class="btn btn-primary" id="nextBtn" type="button">дальше →</button>
+            <button class="btn btn-primary hidden" id="submitBtn" type="submit">собрать заявку ↗</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="success-panel hidden" id="successPanel">
+        <span class="success-kicker">готово ✦</span>
+        <h3>Заявка собрана</h3>
+        <p>Текст уже сформирован. Скопируй его и отправь мастеру в Telegram.</p>
+        <textarea id="resultText" readonly></textarea>
+        <div class="success-actions"><button class="btn btn-primary" id="copyBtn" type="button">Скопировать заявку</button><a class="btn btn-ghost dark" id="telegramLink" target="_blank" rel="noopener">Открыть Telegram ↗</a></div>
+      </div>
+    </section>
+
+    <section class="telegram section-pad">
+      <div>
+        <span class="section-num">05</span>
+        <h2>Можно проще —<br>сразу в Telegram.</h2>
+      </div>
+      <div class="chat-mock">
+        <div class="bubble mine">хочу огромную зелёную змею на спине 🐍</div>
+        <div class="bubble">кайф. кидай худи + референсы, скажу цену</div>
+        <div class="bubble mine">уже отправил 👀</div>
+        <div class="bubble status">✓ заявка принята</div>
+      </div>
+      <a class="btn btn-light" href="#order">Сначала заполнить бланк</a>
+    </section>
+
+    <section class="faq section-pad" id="faq">
+      <div class="section-head"><div><span class="section-num">06</span><h2>Вопросы</h2></div><p>Базовые ответы. Тексты можно заменить под твои реальные условия.</p></div>
+      <div class="faq-list">
+        <details><summary>Что можно кастомить?<span>+</span></summary><p>Практически любую тканевую вещь: футболки, худи, джинсовки, джинсы, сумки, кепки, кеды и другое. Для сложных материалов лучше сначала прислать фото.</p></details>
+        <details><summary>Можно принести свою вещь?<span>+</span></summary><p>Да. Это даже удобнее: не нужно отдельно покупать основу. Главное, чтобы вещь была чистой и подходила для выбранной техники.</p></details>
+        <details><summary>Сколько занимает работа?<span>+</span></summary><p>Обычно от нескольких дней до пары недель — зависит от сложности и очереди. Если есть конкретная дата, укажи её в бланке.</p></details>
+        <details><summary>Рисунок переживёт стирку?<span>+</span></summary><p>При нормальном уходе — да. Стирать лучше вывернутой вещь наизнанку при 30 °C, без агрессивных средств и сушильной машины.</p></details>
+        <details><summary>Можно повторить работу из каталога?<span>+</span></summary><p>Можно взять её за основу, но точную копию лучше не делать: смысл кастома как раз в уникальности.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#top">CUSTOM<span>.LAB</span></a>
+    <p>ручные вещи / единичные экземпляры / 2026</p>
+    <div><a href="#works">работы</a><a href="#order">заказ</a><a href="#faq">faq</a></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
